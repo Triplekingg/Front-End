@@ -40,12 +40,17 @@ router.beforeEach(async (to, from, next) => {
     // get login state using whoami and exios
     let response = await Vue.axios.get("/api/whoami");
     // response.data is our payload
-    store.dispatch("setLoggedInUser", response.data);
-    let isLoggedIn = store.state.isLoggedIn;
+    // get the loggedIn state directly from the response
+    await store.dispatch("setLoggedInUser", response.data);
+    let isLoggedIn = response.data.loggedIn;
+    // make sure if user is logged, user will not be able to see login page
+    if (to.name === 'Login' && isLoggedIn){
+        next({name: "Home"});
+    }
     //if the name of router is not login, it needs authorization to access the page
-    if (to.name !== 'Login' && !isLoggedIn) {
+    if (to.name !== "Login" && !isLoggedIn) {
         //redirect to login page
-        next({name: 'Login'});
+        next({name: "Login"});
     } else {
         // otherwise let go
         next();
