@@ -32,7 +32,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-    routes
+    routes,
 });
 
 // Setup beforeEach hook to check the logged in synce the loggin states with backend
