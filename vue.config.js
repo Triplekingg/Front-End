@@ -3,7 +3,7 @@ module.exports = {
   devServer: {
     host: "localhost", // frontend hostname or ip
     disableHostCheck: true,
-    port: 8080, // frontend port
+    port: 8081, // frontend port
     https: false, //  no sal
     proxy: {
       "/api":{
