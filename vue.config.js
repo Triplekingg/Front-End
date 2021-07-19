@@ -6,10 +6,10 @@ module.exports = {
     port: 8080, // frontend port
     https: false, //  no sal
     proxy: {
-      "/api":{
+      "/api": {
         // proxy everything from frontend http://localhost:8080/api/** to backend at http://localhost:8081/api/**
         // that is why all api path on backend should begin with /api
-        target: "http://localhost:8081"
+        target: "http://localhost:8081",
       },
     },
     headers: {

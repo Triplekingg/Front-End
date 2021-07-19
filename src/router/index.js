@@ -18,7 +18,7 @@ const routes = [
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () =>
-            import(/* webpackChunkName: "about" */ "../views/About.vue"),
+            import(/* webpackChunkName: "about" / "../views/About.vue"),
     },
     {
         path: "/login",
@@ -27,7 +27,7 @@ const routes = [
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () =>
-            import(/* webpackChunkName: "about" */ "../views/Login.vue"),
+            import(/ webpackChunkName: "about" */ "../views/Login.vue"),
     },
 ];
 
@@ -37,16 +37,21 @@ const router = new VueRouter({
 
 // Setup beforeEach hook to check the logged in synce the loggin states with backend
 router.beforeEach(async (to, from, next) => {
-    // get login state using whoami and axios
+    // get login state using whoami and exios
     let response = await Vue.axios.get("/api/whoami");
     // response.data is our payload
-    store.dispatch("setLoggedInUser", response.data);
+    await store.dispatch("setLoggedInUser", response.data);
     let isLoggedIn = store.state.isLoggedIn;
-    // if the name of the router is nto login, it needs authorization to access the page
+    // make sure if user is logged, user will not be able to see login page
+    if (to.name === "Login" && isLoggedIn){
+        next({name: "Home"});
+    }
+    //if the name of router is not login, it needs authorization to access the page
     if (to.name !== "Login" && !isLoggedIn) {
-        // redirect to login page
+        //redirect to login page
         next({name: "Login"});
     } else {
+        // otherwise let go
         next();
     }
 });
