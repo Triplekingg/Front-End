@@ -1,5 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import VueSession from "vue-session/index.esm";
+Vue.use(VueSession)
 
 Vue.use(Vuex);
 
