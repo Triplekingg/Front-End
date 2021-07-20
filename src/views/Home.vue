@@ -14,9 +14,13 @@
       <li>
         <router-link to="/signup">Go to Sign up</router-link>
       </li>
-      <li>
-        <router-link to="/logout" @click="logout">Log Out</router-link>
-      </li>
+      <v-btn
+        color="success"
+        class="mr-4"
+        @click="logout"
+      >
+        Logout
+      </v-btn>
     </ul>
   </v-container>
 </template>
@@ -27,10 +31,10 @@ import Vue from "vue";
 export default {
   methods: {
     async logout() {
-      //submit to backend to authenticate
+      //submit to backend to logout
       let response = await Vue.axios.get("/api/logout");
       if (response.data.success){
-        this.$router.push({ path: "/logout" });
+        this.$router.push({ path: "/login" });
       }
     },
   },
