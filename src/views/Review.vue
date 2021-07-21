@@ -13,30 +13,60 @@
       <div class="my-container" >
         <div class="box1">
             <div class="image"><v-img
-              src="https://i.pinimg.com/originals/42/18/a3/4218a3857b7df8235d454c43ded08b1e.jpg"
+              src="https://wallpapershome.com/images/pages/pic_h/18292.jpg"
             /></div>
-          <p align="center">This sentence contains  example text.<br>
-            <br>
-            As you can see, two breaks add the space above.</p>
+          <div class="parent grid-parent">
+            <div class="child">
+              <p>This sentence contains  example text.<br>
+                <br>
+                As you can see, two breaks add the space above.</p>
+            </div>
+            <div class="child">
+              <p>This sentence contains  example text.<br>
+                <br>
+                As you can see, two breaks add the space above.</p>
+            </div>
+
+          </div>
+
 
         </div>
         <div class="box1">
             <div class="image"><v-img
-              src="https://i.redd.it/zaixl992b8s21.png"
+              src="https://images-ext-1.discordapp.net/external/wJ_ZDQFQkXIW_6ni_6HdCCFvd1J1nI00GVfG3UW3JhU/%3Fmode%3Dscale%26q%3D90%26h%3D720%26w%3D1280/https/store-images.s-microsoft.com/image/apps.30809.65170969132831011.6c6c3131-3fae-40e0-b990-333548e1d2f9.00d6a418-ec0a-4ed4-aaf3-cf5e243cf52e"
             /></div>
-          <p align="center">This sentence contains  example text.<br>
-            <br>
-            As you can see, two breaks add the space above.</p>
+          <div class="parent grid-parent">
+            <div class="child">
+              <p>This sentence contains  example text.<br>
+                <br>
+                As you can see, two breaks add the space above.</p>
+            </div>
+            <div class="child">
+              <p>This sentence contains  example text.<br>
+                <br>
+                As you can see, two breaks add the space above.</p>
+            </div>
+          </div>
+
 
         </div>
 
         <div class="box1">
             <div class="image"><v-img
-              src="https://soleposter.com/image/cache/catalog/poster/10071/10071-683x1024.jpg"
+              src="https://images-ext-1.discordapp.net/external/IODBjUKZ6o-m3KOKz1VS8KBYwLahxGdQ_DDi0sgqb6Q/https/media.contentapi.ea.com/content/dam/ea/fifa/fifa-21/global_assets/common/featured_images/fifa-21-grid-tile-generic-16x9.jpg.adapt.crop191x100.628p.jpg"
             /></div>
-          <p align="center">This sentence contains  example text.<br>
-            <br>
-            As you can see, two breaks add the space above.</p>
+          <div class="parent grid-parent">
+            <div class="child">
+              <p>This sentence contains  example text.<br>
+                <br>
+                As you can see, two breaks add the space above.</p>
+            </div>
+            <div class="child">
+              <p>This sentence contains  example text.<br>
+                <br>
+                As you can see, two breaks add the space above.</p>
+            </div>
+          </div>
 
         </div>
 
@@ -44,24 +74,42 @@
         <div class="box1">
 
             <div class="image"><v-img
-              src="https://i.pinimg.com/originals/25/67/58/25675897d91a3ee92ce7b0ef29fd1255.jpg"
+              src="https://images-ext-1.discordapp.net/external/sS6UdeRevUECyzwQb9N5blQn0gkiDtsxwW-dtzowjbo/https/wallpapercave.com/wp/wp6940868.jpg?width=1900&height=1069"
             /></div>
 
-          <p align="center">This sentence contains  example text.<br>
-            <br>
-            As you can see, two breaks add the space above.</p>
+          <div class="parent grid-parent">
+            <div class="child">
+              <p>This sentence contains  example text.<br>
+                <br>
+                As you can see, two breaks add the space above.</p>
+            </div>
+            <div class="child">
+              <p>This sentence contains  example text.<br>
+                <br>
+                As you can see, two breaks add the space above.</p>
+            </div>
+          </div>
 
         </div>
 
         <div class="box1">
 
             <div class="image"><v-img
-              src="https://www.gbposters.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/p/fp4824-the-last-of-us-2-ellie.jpg"
+              src="https://images-ext-1.discordapp.net/external/zs3WDWmkyRuS2yjVo3M87T121zbQYcE7uHq-4kBqtmk/https/media.gq-magazine.co.uk/photos/5d1397c89a22c2556f947fe5/16%3A9/w_2560%252Cc_limit/Horizon-Zero-Dawn-01-GQ-20Feb17_b.jpg?width=1900&height=1069"
             /></div>
 
-          <p align="center">This sentence contains  example text.<br>
-            <br>
-            As you can see, two breaks add the space above.</p>
+          <div class="parent grid-parent">
+            <div class="child">
+              <p>This sentence contains  example text.<br>
+                <br>
+                As you can see, two breaks add the space above.</p>
+            </div>
+            <div class="child">
+              <p>This sentence contains  example text.<br>
+                <br>
+                As you can see, two breaks add the space above.</p>
+            </div>
+          </div>
 
         </div>
 

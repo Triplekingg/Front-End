@@ -1,20 +1,39 @@
 .box1 {
     display: block;
     padding: 10px;
-    align-content: flex-start;
+    align-content: space-evenly;
 
 }
 .review{
     background-color: #cccccc;
 }
 .image{
-    float: contour;
-    width:  250px;
-    height: 250px;
+    float: inherit;
+    width:  1920px;
+    height: 1080px;
     background-size: cover;
-    aspect-ratio: inherit;
+    aspect-ratio: auto;
     padding: 10px;
     margin-bottom: 10px;
+    align-content: space-evenly;
+}
+.child{
+    /*align-content: flex-start;*/
+    /*alignment: right;*/
+    /*align-self: center;*/
+    /*align-items: center;*/
+    text-align: left;
+    float: left;
+    font-size: x-large;
+    /*padding: 1rem;*/
+    /*float: left;*/
+}
+.parent{
+    padding: 30rem;
+}
+.grid-parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr
 }
 
 /*.box2 {*/
