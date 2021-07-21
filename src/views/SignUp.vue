@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <h3>Please note that the username is not case sensitive</h3>
     <template>
       <v-form
         ref="form"
@@ -48,6 +49,14 @@
 
         <v-btn color="error" class="mr-4" @click="reset">Reset</v-btn>
 
+        <v-btn
+          color="success"
+          class="mr-4"
+          @click="redirection"
+        >
+          Back
+        </v-btn>
+
       </v-form>
     </template>
   </v-container>
@@ -84,6 +93,8 @@ export default {
           this.$router.push({ path: "/about" });
         }
       }
+    },redirection(){
+      this.$router.push({ path: "/" });
     },
     reset() {
       this.$refs.form.reset();

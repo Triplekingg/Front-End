@@ -37,7 +37,7 @@
           class="mr-4"
           @click="redirection"
         >
-          Sign Up
+          Back
         </v-btn>
 
       </v-form>
@@ -66,12 +66,12 @@ export default {
 
         let response = await Vue.axios.post("/api/login", formData);
         if (response.data.success){
-          this.$router.push({ path: "/" });
+          this.$router.push({ path: "/review" });
             }
       }
     },
     redirection(){
-      this.$router.push({ path: "/signup" });
+      this.$router.push({ path: "/" });
     },
     reset() {
       this.$refs.form.reset();
