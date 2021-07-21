@@ -79,6 +79,9 @@ router.beforeEach(async (to, from, next) => {
     if (to.name === "Login" && isLoggedIn) {
         next({ name: "Home" });
     }
+    if(to.name ==="Review" && !isLoggedIn){
+        next({name: "Login"});
+    }
     //if the name of router is not login, it needs authorization to access the page
     // if (to.name !== "Login" && !isLoggedIn) {
     //     //redirect to login page
