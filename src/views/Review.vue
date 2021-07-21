@@ -32,9 +32,6 @@
                   :rules="reviewRules"
                   label="Review"
                 ></v-text-field>
-
-
-
                 <v-btn
                   color="success"
                   class="mr-4"
@@ -44,7 +41,7 @@
                   Submit Review
                 </v-btn>
 
-                <v-btn color="error" class="mr-4" @click="reset">Read Reviews</v-btn>
+                <v-btn color="error" class="mr-4" @click="redirection">Read Reviews</v-btn>
 
               </v-form>
             </div>
@@ -83,9 +80,28 @@
                 As you can see, two breaks add the space above.</p>
             </div>
             <div class="child">
-              <p>This sentence contains  example text.<br>
-                <br>
-                As you can see, two breaks add the space above.</p>
+              <v-form
+                ref="form"
+                v-model="valid"
+                lazy-validation
+              >
+                <v-text-field
+                  v-model="review"
+                  :rules="reviewRules"
+                  label="Review"
+                ></v-text-field>
+                <v-btn
+                  color="success"
+                  class="mr-4"
+                  @click="submitFifa"
+
+                >
+                  Submit Review
+                </v-btn>
+
+                <v-btn color="error" class="mr-4" @click="redirection">Read Reviews</v-btn>
+
+              </v-form>
             </div>
           </div>
 
@@ -154,6 +170,7 @@ export default {
     valid: true,
     review: "",
     fortnite: "Fortnite",
+    fifa:"Fifa",
     reviewRules: [(v) => !!v || "Review cannot be empty"],
   }),
 
@@ -178,8 +195,21 @@ export default {
           }
         }
       },
+    async submitFifa() {
+      if (this.$refs.form.validate()){
+        //submit to backend to authenticate
+        let formData = new FormData();
+        formData.append("review", this.review);
+        formData.append("gameName", this.fifa);
+
+        let response = await Vue.axios.post("/api/review", formData);
+        if (response.data.success || !response.data.success) {
+          location.reload()
+        }
+      }
+    },
       redirection(){
-        this.$router.push({ path: "/" });
+        this.$router.push({ path: "/eachreview" });
       },
       reset() {
         this.$refs.form.reset();
