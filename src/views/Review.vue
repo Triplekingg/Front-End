@@ -22,11 +22,31 @@
                 As you can see, two breaks add the space above.</p>
             </div>
             <div class="child">
-              <p>This sentence contains  example text.<br>
-                <br>
-                As you can see, two breaks add the space above.</p>
-            </div>
+              <v-form
+                ref="form"
+                v-model="valid"
+                lazy-validation
+              >
+                <v-text-field
+                  v-model="review"
+                  :rules="reviewRules"
+                  label="Review"
+                ></v-text-field>
 
+
+
+                <v-btn
+                  color="success"
+                  class="mr-4"
+                  @click="submitFortnite"
+                >
+                  Submit Review
+                </v-btn>
+
+                <v-btn color="error" class="mr-4" @click="reset">Read Reviews</v-btn>
+
+              </v-form>
+            </div>
           </div>
 
 
@@ -113,40 +133,7 @@
 
         </div>
 
-<!--          <p>This sentence contains  example text.<br>-->
-<!--            <br>-->
-<!--            As you can see, two breaks add the space above.</p>-->
 
-<!--          <div><v-img-->
-<!--            src="https://i.redd.it/zaixl992b8s21.png"-->
-<!--          /></div>-->
-
-<!--          <p>This sentence contains  example text.<br>-->
-<!--            <br>-->
-<!--            As you can see, two breaks add the space above.</p>-->
-
-<!--          <div><v-img-->
-<!--            src="https://soleposter.com/image/cache/catalog/poster/10071/10071-683x1024.jpg"-->
-<!--          /></div>-->
-<!--          <p>This sentence contains  example text.<br>-->
-<!--            <br>-->
-<!--            As you can see, two breaks add the space above.</p>-->
-
-<!--          <div><v-img-->
-<!--            src="https://i.pinimg.com/originals/25/67/58/25675897d91a3ee92ce7b0ef29fd1255.jpg"-->
-<!--          /></div>-->
-<!--          <p>This sentence contains  example text.<br>-->
-<!--            <br>-->
-<!--            As you can see, two breaks add the space above.</p>-->
-
-<!--          <div><v-img-->
-<!--            src="https://www.gbposters.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/p/fp4824-the-last-of-us-2-ellie.jpg"-->
-<!--          /></div>-->
-<!--          <p>This sentence contains  example text.<br>-->
-<!--            <br>-->
-<!--            As you can see, two breaks add the space above.</p>-->
-
-<!--        </vue-aspect-ratio>-->
 
       </div>
     </div>
@@ -162,6 +149,11 @@ import Vue from "vue";
 // import VueAspectRatio from "vue-aspect-ratio";
 
 export default {
+  data: () => ({
+    review: "",
+    fortnite: "Fortnite",
+    reviewRules: [(v) => !!v || "Review cannot be empty"],
+  }),
 
   methods: {
     async logout() {
@@ -171,7 +163,27 @@ export default {
         this.$router.push({ path: "/login" });
       }
     },
-  },
+      async submitFortnite() {
+        if (this.$refs.form.validate()){
+          //submit to backend to authenticate
+          let formData = new FormData();
+          formData.append("review", this.review);
+          formData.append("gameName", this.fortnite);
+
+          let response = await Vue.axios.post("/api/review", formData);
+          if (response.data.success){
+            this.$router.push({ path: "/review" });
+          }
+        }
+      },
+      redirection(){
+        this.$router.push({ path: "/" });
+      },
+      reset() {
+        this.$refs.form.reset();
+      },
+    }
+  ,
   // name: "AmazingComponent",
   // components: {
   //   "vue-aspect-ratio": VueAspectRatio
