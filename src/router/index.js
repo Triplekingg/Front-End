@@ -54,21 +54,28 @@ const router = new VueRouter({
 
 // Setup beforeEach hook to check the logged in synce the loggin states with backend
 router.beforeEach(async (to, from, next) => {
+    if (to.name === "SignUp" && !isLoggedIn) {
+        next();
+    }
     // get login state using whoami and exios
     let response = await Vue.axios.get("/api/whoami");
     // let response = await Vue.axios.get("api/whomami");
     // response.data is our payload
     await store.dispatch("setLoggedInUser", response.data);
     let isLoggedIn = response.data.loggedIn;
+    // if (to.path === "/signup" && !isLoggedIn) {
+    //     next({ path:"/" });
+    // }
     // make sure if user is logged, user will not be able to see login page
     if (to.name === "Login" && isLoggedIn) {
         next({ name: "Home" });
     }
     //if the name of router is not login, it needs authorization to access the page
-    if (to.name !== "Login" && !isLoggedIn) {
-        //redirect to login page
-        next({ name: "Login" });
-    } else {
+    // if (to.name !== "Login" && !isLoggedIn) {
+    //     //redirect to login page
+    //     next({ name: "Login" });
+    // }
+    else {
         // otherwise let go
         next();
     }

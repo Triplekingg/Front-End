@@ -27,7 +27,7 @@ export default new Vuex.Store({
     },  },
   actions: {
     setLoggedInUser({ commit }, payload) {
-      console.log(payload.isLoggedIn)
+      // console.log(payload.isLoggedIn)
       commit("setIsLoggedIn",payload.isLoggedIn)
       commit("setUsername",payload.username)
       commit("setName",payload.name)

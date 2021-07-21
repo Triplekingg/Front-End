@@ -11,9 +11,17 @@
       <li>
         <router-link to="/login">Go to Login</router-link>
       </li>
-      <li>
-        <router-link to="/signup">Go to Sign up</router-link>
-      </li>
+<!--      <li>-->
+<!--        <router-link to="/signup">Go to Sign up</router-link>-->
+<!--      </li>-->
+      <v-btn
+        color="success"
+        class="mr-4"
+        @click="redirection"
+      >
+        Sign Up
+      </v-btn>
+
       <v-btn
         color="success"
         class="mr-4"
@@ -30,6 +38,9 @@ import Vue from "vue";
 
 export default {
   methods: {
+    async redirection(){
+      this.$router.push({ path: "/signup" });
+    },
     async logout() {
       //submit to backend to logout
       let response = await Vue.axios.get("/api/logout");

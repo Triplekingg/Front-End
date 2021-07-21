@@ -32,6 +32,14 @@
 
         <v-btn color="error" class="mr-4" @click="reset">Reset</v-btn>
 
+        <v-btn
+          color="success"
+          class="mr-4"
+          @click="redirection"
+        >
+          Sign Up
+        </v-btn>
+
       </v-form>
     </template>
   </v-container>
@@ -61,6 +69,9 @@ export default {
           this.$router.push({ path: "/" });
             }
       }
+    },
+    redirection(){
+      this.$router.push({ path: "/signup" });
     },
     reset() {
       this.$refs.form.reset();

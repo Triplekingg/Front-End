@@ -41,7 +41,7 @@
           color="success"
           class="mr-4"
           @click="submit"
-          href="/login"
+          href="/"
         >
           Sign Up
         </v-btn>
@@ -80,11 +80,15 @@ export default {
         if (response.data.success){
           this.$router.push({ path: "/login" });
         }
+        else{
+          this.$router.push({ path: "/about" });
+        }
       }
     },
     reset() {
       this.$refs.form.reset();
     },
   },
+  name: "SignUp",
 };
 </script>
