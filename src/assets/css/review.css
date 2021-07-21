@@ -1,0 +1,25 @@
+.box1 {
+    display: block;
+    padding: 10px;
+    align-content: flex-start;
+
+}
+.review{
+    background-color: #cccccc;
+}
+.image{
+    float: contour;
+    width:  250px;
+    height: 250px;
+    background-size: cover;
+    aspect-ratio: inherit;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/*.box2 {*/
+/*    display: block;*/
+/*    padding: 100px;*/
+/*    text-align: justify;*/
+/*    margin-top: 100px; !* OR ADD THIS LINE AND SET YOUR PROPER SPACE as the space above box2 *!*/
+/*}*/

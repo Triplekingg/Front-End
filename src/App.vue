@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
+    <v-app-bar app color="pink" dark>
       <div class="d-flex align-center">
 <!--        <v-img-->
 <!--          alt="Vuetify Logo"-->
@@ -37,11 +37,26 @@
 </template>
 
 <script>
-export default {
-  name: "App",
+import Vue from 'vue'
+import Vuetify from 'vuetify/lib'
 
+Vue.use(Vuetify)
+
+export default new Vuetify({
+  theme: { dark: true },
+  name:"App",
   data: () => ({
     //
   }),
-};
+});
+// export default new Vuetify({
+// theme: { dark: true },
+// }) {
+//   name: "App",
+//
+//
+//   data: () => ({
+//     //
+//   }),
+// };
 </script>
