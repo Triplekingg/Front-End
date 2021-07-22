@@ -7,12 +7,20 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    test:null,
+    fortniteReviews:null,
     isLoggedIn: false,
     username: null,
     name: null,
     role: "",
   },
   mutations: {
+    setFortniteReviews(state, fortniteReviews){
+      state.fortniteReviews = fortniteReviews;
+    },
+    setTest(state, test){
+      state.test = test;
+    },
     setIsLoggedIn(state, isLoggedIn) {
       state.isLoggedIn = isLoggedIn;
     },
@@ -26,6 +34,10 @@ export default new Vuex.Store({
       state.role = role;
     },  },
   actions: {
+    setFortnite({commit}, payload){
+      commit("setFortniteReviews", payload.fortniteReviews)
+      commit("setTest", payload.test)
+    },
     setLoggedInUser({ commit }, payload) {
       // console.log(payload.isLoggedIn)
       commit("setIsLoggedIn",payload.isLoggedIn)
