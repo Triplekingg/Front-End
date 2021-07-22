@@ -17,6 +17,11 @@
     margin-bottom: 10px;
     align-content: space-evenly;
 }
+.ul.no-bullets {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
 .child{
     /*align-content: flex-start;*/
     /*alignment: right;*/
@@ -27,6 +32,7 @@
     font-size: x-large;
     /*padding: 1rem;*/
     /*float: left;*/
+    list-style-type: none;
 }
 .parent{
     padding: 30rem;
@@ -44,6 +50,8 @@
     border-radius: 5px;
     padding: 16px;
     margin: 16px;
+    list-style-type: none;
+
 }
 
 /*.box2 {*/

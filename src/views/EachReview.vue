@@ -17,9 +17,9 @@
             /></div>
           <div class="parent grid-parent">
             <div class="child" >
-              <l v-if="review.length">
+              <ul class="no-bullets" v-if="review.length">
                 <li v-for="(rev) in review" :key="rev.id"><br>
-                  <span class="hhh">{{rev}}<br> </span>
+                  <span class="hhh ">{{rev}}<br> </span>
                   <br>
                   <span v-if="rev.error">
       <ol>
@@ -27,7 +27,7 @@
       </ol>
     </span>
   </li>
-</l>
+</ul>
 
 
 
