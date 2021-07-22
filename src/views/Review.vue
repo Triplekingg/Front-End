@@ -13,7 +13,7 @@
         </v-btn></p>
       </div>
       <div align="center">
-        <h1>Here are the top 5 games of the month</h1>
+        <h1>Here are the Top 5 Games of the Month</h1>
         <p> </p>
       </div>
 
@@ -29,9 +29,26 @@
             /></div>
           <div class="parent grid-parent">
             <div class="child">
-              <p>This sentence contains  example text.<br>
-                <br>
-                As you can see, two breaks add the space above.</p>
+              <div class="Name">
+                NAME: Fortnite
+              </div>
+              <p> </p>
+              <div class="ReleaseDate">
+                RELEASE DATE: 25 JULY 2017
+              </div>
+              <p></p>
+              <div class="Description">
+                <div>
+                  DESCRIPTION:
+                </div>
+                <p> </p>
+                <div class="DescriptionDetails">
+                  Fortnite is a survival game where 100 players fight against each other in player versus player combat to be the last one standing. It is a fast-paced, action-packed game, not unlike The Hunger Games, where strategic thinking is a must in order to survive. There are an estimated 125 million players on Fortnite.
+                </div>
+                <p></p>
+
+              </div>
+
             </div>
             <div class="child">
               <v-form
@@ -67,9 +84,26 @@
             /></div>
           <div class="parent grid-parent">
             <div class="child">
-              <p>This sentence contains  example text.<br>
-                <br>
-                As you can see, two breaks add the space above.</p>
+              <div class="Name">
+                NAME: Rainbow 6 Seige
+              </div>
+              <p> </p>
+              <div class="ReleaseDate">
+                RELEASE DATE: 01 DECEMBER 2015
+              </div>
+              <p></p>
+              <div class="Description">
+                <div>
+                  DESCRIPTION:
+                </div>
+                <p> </p>
+                <div class="DescriptionDetails">
+                  Tom Clancy's Rainbow Six Siege is a first-person shooter game, in which players utilize many different operators from the Rainbow team. Different operators have different nationalities, weapons, and gadgets. Players can also complete in-game "challenges" to get a small amount of renown.
+                </div>
+                <p></p>
+
+              </div>
+
             </div>
             <div class="child">
               <v-form
@@ -106,9 +140,28 @@
             /></div>
           <div class="parent grid-parent">
             <div class="child">
-              <p>This sentence contains  example text.<br>
-                <br>
-                As you can see, two breaks add the space above.</p>
+              <div class="Name">
+                NAME: FIFA 21
+              </div>
+              <p> </p>
+              <div class="ReleaseDate">
+                RELEASE DATE: 06 OCTOBER 2020
+              </div>
+              <p></p>
+              <div class="Description">
+                <div>
+                  DESCRIPTION:
+                </div>
+                <p> </p>
+                <div class="DescriptionDetails">
+                  FIFA 21 is an association football simulation video game
+                  published by Electronic Arts as part of the FIFA series.
+                  It is the 28th installment in the FIFA series, and was
+                  released on 9 October 2020 for Microsoft Windows, Nintendo
+                  Switch, PlayStation 4 and Xbox One.
+                </div>
+                <p></p>
+              </div>
             </div>
             <div class="child">
               <v-form
@@ -147,9 +200,27 @@
 
           <div class="parent grid-parent">
             <div class="child">
-              <p>This sentence contains  example text.<br>
-                <br>
-                As you can see, two breaks add the space above.</p>
+              <div class="Name">
+                NAME: NBA 2K21
+              </div>
+              <p> </p>
+              <div class="ReleaseDate">
+                RELEASE DATE: 04 SEPTEMBER 2020
+              </div>
+              <p></p>
+              <div class="Description">
+                <div>
+                  DESCRIPTION:
+                </div>
+                <p> </p>
+                <div class="DescriptionDetails">
+                  NBA 2K21 is a basketball simulation video game that was developed by
+                  Visual Concepts and published by 2K Sports, based on the National
+                  Basketball Association. It is the 22nd installment in the NBA 2K
+                  franchise and the successor to NBA 2K20, and the predecessor to NBA 2K22.
+                </div>
+                <p></p>
+              </div>
             </div>
             <div class="child">
               <v-form
@@ -187,9 +258,27 @@
 
           <div class="parent grid-parent">
             <div class="child">
-              <p>This sentence contains  example text.<br>
-                <br>
-                As you can see, two breaks add the space above.</p>
+              <div class="Name">
+                NAME: HORIZON ZERO DAWN
+              </div>
+              <p> </p>
+              <div class="ReleaseDate">
+                RELEASE DATE: 28 FEBRUARY 2017
+              </div>
+              <p></p>
+              <div class="Description">
+                <div>
+                  DESCRIPTION:
+                </div>
+                <p> </p>
+                <div class="DescriptionDetails">
+                  Horizon Zero Dawn is a 2017 action role-playing game developed
+                  by Guerrilla Games and published by Sony Interactive Entertainment.
+                  The plot follows Aloy, a young hunter in a world overrun by machines,
+                  who sets out to uncover her past.
+                </div>
+                <p></p>
+              </div>
             </div>
             <div class="child">
               <v-form

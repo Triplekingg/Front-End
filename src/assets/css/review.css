@@ -22,6 +22,20 @@
     margin: 0;
     padding: 0;
 }
+.Name{
+    font-weight: bold;
+}
+.ReleaseDate{
+    font-weight: bold;
+ }
+.Description{
+    font-weight: bold;
+    text-align: justify-all;
+}
+/*.DescriptionDetails{*/
+/*    justify-self: flex-start;*/
+/*}*/
+
 .child{
     /*align-content: flex-start;*/
     /*alignment: right;*/
@@ -30,7 +44,7 @@
     text-align: left;
     float: left;
     font-size: x-large;
-    /*padding: 1rem;*/
+    padding: 1rem;
     /*float: left;*/
     list-style-type: none;
 }
