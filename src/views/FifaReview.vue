@@ -1,4 +1,4 @@
-<template class="fortnitereview" xmlns:th="http://www.w3.org/1999/xhtml">
+<template class="fifareview" xmlns:th="http://www.w3.org/1999/xhtml">
   <v-container >
     <div >
       <p align="right"><v-btn
@@ -18,10 +18,10 @@
       </v-btn></p>
 
       <div class="my-container" >
-        <h1>Here are the reviews for Rainbow 6 Siege</h1>
+        <h1>Here are the reviews for Fifa 21</h1>
         <div class="box1">
             <div class="image"><v-img
-              src="https://images-ext-1.discordapp.net/external/wJ_ZDQFQkXIW_6ni_6HdCCFvd1J1nI00GVfG3UW3JhU/%3Fmode%3Dscale%26q%3D90%26h%3D720%26w%3D1280/https/store-images.s-microsoft.com/image/apps.30809.65170969132831011.6c6c3131-3fae-40e0-b990-333548e1d2f9.00d6a418-ec0a-4ed4-aaf3-cf5e243cf52e"
+              src="https://images-ext-1.discordapp.net/external/IODBjUKZ6o-m3KOKz1VS8KBYwLahxGdQ_DDi0sgqb6Q/https/media.contentapi.ea.com/content/dam/ea/fifa/fifa-21/global_assets/common/featured_images/fifa-21-grid-tile-generic-16x9.jpg.adapt.crop191x100.628p.jpg"
             /></div>
           <div class="parent grid-parent" align="left">
             <div class="child" align="left">
@@ -63,17 +63,17 @@ export default {
     username: null,
     reviewRules: [(v) => !!v || "Review cannot be empty"],
 
-    async submitSiege() {
+    async submitFifa() {
 
       //submit to backend to fetch reviews
-      let response = await Vue.axios.get("/api/review/siege");
-      await store.dispatch("setSiege", response.data);
+      let response = await Vue.axios.get("/api/review/fifa");
+      await store.dispatch("setFifa", response.data);
       this.review = response.data.reviews;
     },
 
   }),
   beforeMount(){
-    this.submitSiege();
+    this.submitFifa();
   },
 
   methods: {

@@ -104,11 +104,11 @@
                 v-model="valid"
                 lazy-validation
               >
-                <v-text-field
+                <v-textarea
                   v-model="review"
                   :rules="reviewRules"
                   label="Review"
-                ></v-text-field>
+                ></v-textarea>
                 <v-btn
                   color="success"
                   class="mr-4"
@@ -118,7 +118,7 @@
                   Submit Review
                 </v-btn>
 
-                <v-btn color="error" class="mr-4" @click="redirection">Read Reviews</v-btn>
+                <v-btn color="error" class="mr-4" @click="redirectionFifa">Read Reviews</v-btn>
 
               </v-form>
             </div>
@@ -286,6 +286,9 @@ export default {
       },
     redirectionSiege(){
       this.$router.push({ path: "/siegereview" });
+    },
+    redirectionFifa(){
+      this.$router.push({ path: "/fifareview" });
     },
       reset() {
         this.$refs.form.reset();
