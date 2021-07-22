@@ -12,8 +12,8 @@
           Logout
         </v-btn></p>
       </div>
-      <div align="center">
-        <h1>Here are the Top 5 Games of the Month</h1>
+      <div class="Top" align="center">
+        <h1>HERE ARE THE TOP 5 GAMES OF THE MONTH</h1>
         <p> </p>
       </div>
 

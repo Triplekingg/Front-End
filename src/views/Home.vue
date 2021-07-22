@@ -1,21 +1,7 @@
 <template>
   <v-container>
-    <h2>Home</h2>
     <h3>Welcome to Good Stuff game reviews. Please Log in or Sign Up to Continue</h3>
     <ul>
-<!--      <li>-->
-<!--       <router-link to="/">Go to Home</router-link>-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <router-link to="/about">Go to About</router-link>-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <router-link to="/login">Go to Login</router-link>-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <router-link to="/signup">Go to Sign up</router-link>-->
-<!--      </li>-->
-
       <v-btn
         color="success"
         class="mr-4"
@@ -31,15 +17,10 @@
       >
         Sign Up
       </v-btn>
-
-<!--      <v-btn-->
-<!--        color="success"-->
-<!--        class="mr-4"-->
-<!--        @click="logout"-->
-<!--      >-->
-<!--        Logout-->
-<!--      </v-btn>-->
     </ul>
+    <div class="image"><v-img
+      src="https://media.discordapp.net/attachments/850372701394829396/867862975833309204/ps.png?width=1080&height=487"
+    /></div>
   </v-container>
 </template>
 
