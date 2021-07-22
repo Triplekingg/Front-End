@@ -23,7 +23,7 @@
             <div class="image"><v-img
               src="https://images-ext-1.discordapp.net/external/IODBjUKZ6o-m3KOKz1VS8KBYwLahxGdQ_DDi0sgqb6Q/https/media.contentapi.ea.com/content/dam/ea/fifa/fifa-21/global_assets/common/featured_images/fifa-21-grid-tile-generic-16x9.jpg.adapt.crop191x100.628p.jpg"
             /></div>
-          <div class="parent grid-parent" align="left">
+          <div class="parent" align="left">
             <div class="child" align="left">
               <ul class="no-bullets" v-if="review.length">
                 <li v-for="(rev) in review" :key="rev.id">

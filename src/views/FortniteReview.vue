@@ -23,7 +23,7 @@
             <div class="image"><v-img
               src="https://wallpapershome.com/images/pages/pic_h/18292.jpg"
             /></div>
-          <div class="parent grid-parent" align="left">
+          <div class="parent" align="left">
             <div class="child" align="left">
               <ul class="no-bullets" v-if="review.length">
                 <li v-for="(rev) in review" :key="rev.id">

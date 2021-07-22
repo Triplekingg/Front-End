@@ -23,7 +23,7 @@
             <div class="image"><v-img
               src="https://images-ext-1.discordapp.net/external/sS6UdeRevUECyzwQb9N5blQn0gkiDtsxwW-dtzowjbo/https/wallpapercave.com/wp/wp6940868.jpg?width=1900&height=1069"
             /></div>
-          <div class="parent grid-parent" align="left">
+          <div class="parent" align="left">
             <div class="child" align="left">
               <ul class="no-bullets" v-if="review.length">
                 <li v-for="(rev) in review" :key="rev.id">

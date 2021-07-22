@@ -185,21 +185,21 @@
                 v-model="valid"
                 lazy-validation
               >
-                <v-text-field
+                <v-textarea
                   v-model="review"
                   :rules="reviewRules"
                   label="Review"
-                ></v-text-field>
+                ></v-textarea>
                 <v-btn
                   color="success"
                   class="mr-4"
-                  @click="submitFortnite"
+                  @click="submitHorizon"
 
                 >
                   Submit Review
                 </v-btn>
 
-                <v-btn color="error" class="mr-4" @click="redirection">Read Reviews</v-btn>
+                <v-btn color="error" class="mr-4" @click="redirectionHorizon">Read Reviews</v-btn>
 
               </v-form>
             </div>
@@ -294,6 +294,19 @@ export default {
         }
       }
     },
+    async submitHorizon() {
+      if (this.$refs.form.validate()){
+        //submit to backend to authenticate
+        let formData = new FormData();
+        formData.append("review", this.review);
+        formData.append("gameName", this.horizon);
+
+        let response = await Vue.axios.post("/api/review", formData);
+        if (response.data.success || !response.data.success) {
+          location.reload()
+        }
+      }
+    },
       redirectionFortnite(){
         this.$router.push({ path: "/fortnitereview" });
       },
@@ -305,6 +318,9 @@ export default {
     },
     redirectionNba(){
       this.$router.push({ path: "/nbareview" });
+    },
+    redirectionHorizon(){
+      this.$router.push({ path: "/horizonreview" });
     },
       reset() {
         this.$refs.form.reset();

@@ -12,6 +12,7 @@ export default new Vuex.Store({
     siegeReviews:null,
     fifaReviews:null,
     nbaReviews:null,
+    horizonReviews:null,
     isLoggedIn: false,
     username: null,
     name: null,
@@ -29,6 +30,9 @@ export default new Vuex.Store({
     },
     setNbaReviews(state, nbaReviews){
       state.fifaReviews = nbaReviews;
+    },
+    setHorizonReviews(state, horizonReviews){
+      state.horizonReviews = horizonReviews;
     },
     setTest(state, test){
       state.test = test;
@@ -63,6 +67,11 @@ export default new Vuex.Store({
     },
     setNba({commit}, payload){
       commit("setNbaReviews", payload.nbaReviews)
+      commit("setTest", payload.test)
+      commit("setUsername",payload.username)
+    },
+    setHorizon({commit}, payload){
+      commit("setHorizonReviews", payload.nbaReviews)
       commit("setTest", payload.test)
       commit("setUsername",payload.username)
     },
