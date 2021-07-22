@@ -27,11 +27,11 @@
                 v-model="valid"
                 lazy-validation
               >
-                <v-text-field
+                <v-textarea
                   v-model="review"
                   :rules="reviewRules"
                   label="Review"
-                ></v-text-field>
+                ></v-textarea>
                 <v-btn
                   color="success"
                   class="mr-4"
@@ -41,7 +41,7 @@
                   Submit Review
                 </v-btn>
 
-                <v-btn color="error" class="mr-4" @click="redirection">Read Reviews</v-btn>
+                <v-btn color="error" class="mr-4" @click="redirectionFortnite">Read Reviews</v-btn>
 
               </v-form>
             </div>
@@ -60,9 +60,28 @@
                 As you can see, two breaks add the space above.</p>
             </div>
             <div class="child">
-              <p>This sentence contains  example text.<br>
-                <br>
-                As you can see, two breaks add the space above.</p>
+              <v-form
+                ref="form"
+                v-model="valid"
+                lazy-validation
+              >
+                <v-textarea
+                  v-model="review"
+                  :rules="reviewRules"
+                  label="Review"
+                ></v-textarea>
+                <v-btn
+                  color="success"
+                  class="mr-4"
+                  @click="submitSiege"
+
+                >
+                  Submit Review
+                </v-btn>
+
+                <v-btn color="error" class="mr-4" @click="redirectionSiege">Read Reviews</v-btn>
+
+              </v-form>
             </div>
           </div>
 
@@ -121,9 +140,28 @@
                 As you can see, two breaks add the space above.</p>
             </div>
             <div class="child">
-              <p>This sentence contains  example text.<br>
-                <br>
-                As you can see, two breaks add the space above.</p>
+              <v-form
+                ref="form"
+                v-model="valid"
+                lazy-validation
+              >
+                <v-text-field
+                  v-model="review"
+                  :rules="reviewRules"
+                  label="Review"
+                ></v-text-field>
+                <v-btn
+                  color="success"
+                  class="mr-4"
+                  @click="submitFortnite"
+
+                >
+                  Submit Review
+                </v-btn>
+
+                <v-btn color="error" class="mr-4" @click="redirection">Read Reviews</v-btn>
+
+              </v-form>
             </div>
           </div>
 
@@ -142,9 +180,28 @@
                 As you can see, two breaks add the space above.</p>
             </div>
             <div class="child">
-              <p>This sentence contains  example text.<br>
-                <br>
-                As you can see, two breaks add the space above.</p>
+              <v-form
+                ref="form"
+                v-model="valid"
+                lazy-validation
+              >
+                <v-text-field
+                  v-model="review"
+                  :rules="reviewRules"
+                  label="Review"
+                ></v-text-field>
+                <v-btn
+                  color="success"
+                  class="mr-4"
+                  @click="submitFortnite"
+
+                >
+                  Submit Review
+                </v-btn>
+
+                <v-btn color="error" class="mr-4" @click="redirection">Read Reviews</v-btn>
+
+              </v-form>
             </div>
           </div>
 
@@ -170,7 +227,10 @@ export default {
     valid: true,
     review: "",
     fortnite: "Fortnite",
+    siege: "Siege",
     fifa:"Fifa",
+    horizon:"Horizon",
+    nba:"NBA",
     reviewRules: [(v) => !!v || "Review cannot be empty"],
   }),
 
@@ -195,6 +255,19 @@ export default {
           }
         }
       },
+    async submitSiege() {
+      if (this.$refs.form.validate()){
+        //submit to backend to authenticate
+        let formData = new FormData();
+        formData.append("review", this.review);
+        formData.append("gameName", this.siege);
+
+        let response = await Vue.axios.post("/api/review", formData);
+        if (response.data.success || !response.data.success) {
+          location.reload()
+        }
+      }
+    },
     async submitFifa() {
       if (this.$refs.form.validate()){
         //submit to backend to authenticate
@@ -208,9 +281,12 @@ export default {
         }
       }
     },
-      redirection(){
+      redirectionFortnite(){
         this.$router.push({ path: "/fortnitereview" });
       },
+    redirectionSiege(){
+      this.$router.push({ path: "/siegereview" });
+    },
       reset() {
         this.$refs.form.reset();
       },

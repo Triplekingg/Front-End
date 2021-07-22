@@ -18,10 +18,10 @@
       </v-btn></p>
 
       <div class="my-container" >
-        <h1>Here are the reviews for Fortnite</h1>
+        <h1>Here are the reviews for Rainbow 6 Siege</h1>
         <div class="box1">
             <div class="image"><v-img
-              src="https://wallpapershome.com/images/pages/pic_h/18292.jpg"
+              src="https://images-ext-1.discordapp.net/external/wJ_ZDQFQkXIW_6ni_6HdCCFvd1J1nI00GVfG3UW3JhU/%3Fmode%3Dscale%26q%3D90%26h%3D720%26w%3D1280/https/store-images.s-microsoft.com/image/apps.30809.65170969132831011.6c6c3131-3fae-40e0-b990-333548e1d2f9.00d6a418-ec0a-4ed4-aaf3-cf5e243cf52e"
             /></div>
           <div class="parent grid-parent" align="left">
             <div class="child" align="left">
@@ -36,8 +36,6 @@
     </span>
   </li>
 </ul>
-
-
             </div>
           </div>
 
@@ -66,17 +64,17 @@ export default {
     fortnite: "Fortnite",
     reviewRules: [(v) => !!v || "Review cannot be empty"],
 
-    async submitFortnite() {
+    async submitSiege() {
 
       //submit to backend to fetch reviews
-      let response = await Vue.axios.get("/api/review/fortnite");
-      await store.dispatch("setFortnite", response.data);
+      let response = await Vue.axios.get("/api/review/siege");
+      await store.dispatch("setSiege", response.data);
       this.review = response.data.reviews;
     },
 
   }),
   beforeMount(){
-    this.submitFortnite();
+    this.submitSiege();
   },
 
   methods: {

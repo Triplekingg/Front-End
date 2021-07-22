@@ -9,6 +9,7 @@ export default new Vuex.Store({
   state: {
     test:null,
     fortniteReviews:null,
+    siegeReviews:null,
     isLoggedIn: false,
     username: null,
     name: null,
@@ -17,6 +18,9 @@ export default new Vuex.Store({
   mutations: {
     setFortniteReviews(state, fortniteReviews){
       state.fortniteReviews = fortniteReviews;
+    },
+    setSiegeReviews(state, siegeReviews){
+      state.siegeReviews = siegeReviews;
     },
     setTest(state, test){
       state.test = test;
@@ -39,6 +43,12 @@ export default new Vuex.Store({
       commit("setTest", payload.test)
       commit("setUsername",payload.username)
     },
+    setSiege({commit}, payload){
+      commit("setSiegeReviews", payload.siegeReviews)
+      commit("setTest", payload.test)
+      commit("setUsername",payload.username)
+    },
+
     setLoggedInUser({ commit }, payload) {
 
       commit("setIsLoggedIn",payload.isLoggedIn)

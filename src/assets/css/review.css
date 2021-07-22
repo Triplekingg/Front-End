@@ -35,7 +35,7 @@
     list-style-type: none;
 }
 .parent{
-    padding: 30rem;
+    padding: 10rem;
 }
 .grid-parent {
     display: grid;
