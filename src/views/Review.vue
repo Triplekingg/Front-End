@@ -209,7 +209,7 @@ export default {
       }
     },
       redirection(){
-        this.$router.push({ path: "/eachreview" });
+        this.$router.push({ path: "/fortnitereview" });
       },
       reset() {
         this.$refs.form.reset();

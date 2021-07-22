@@ -1,4 +1,4 @@
-<template class="eachreview" xmlns:th="http://www.w3.org/1999/xhtml">
+<template class="fortnitereview" xmlns:th="http://www.w3.org/1999/xhtml">
   <v-container >
     <div >
       <h1>Here are the top 5 games of the month</h1>
@@ -85,7 +85,7 @@ export default {
     //   // this.review = response.data.Reviews;
     // },
     async submitFortnite() {
-      let response = await Vue.axios.get("/api/review");
+      let response = await Vue.axios.get("/api/review/fortnite");
       await store.dispatch("setFortnite", response.data);
       this.review = response.data.reviews;
     },
