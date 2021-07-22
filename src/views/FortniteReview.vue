@@ -19,7 +19,7 @@
             <div class="child" >
               <ul class="no-bullets" v-if="review.length">
                 <li v-for="(rev) in review" :key="rev.id"><br>
-                  <span class="hhh ">{{rev}}<br> </span>
+                  <span class="hhh ">{{rev.username}}: {{rev.reviews}}<br> </span>
                   <br>
                   <span v-if="rev.error">
       <ol>
@@ -30,15 +30,6 @@
 </ul>
 
 
-
-<!--              <tbody>-->
-<!--              <tr th:if="${fortniteReviews.empty}">-->
-<!--                <td colspan="2"> No Reviews Available </td>-->
-<!--              </tr>-->
-<!--              <tr th:each="review : ${fortniteReviews}">-->
-<!--                <td><span th:text="${review}">  </span></td>-->
-<!--              </tr>-->
-<!--              </tbody>-->
             </div>
             <div class="child">
 
@@ -60,45 +51,31 @@
 <script>
 import Vue from "vue";
 import store from "@/store"
-// import Component from 'vue-class-component'
-// import VueAspectRatio from "vue-aspect-ratio";
-// new Vue({
-//   data() {
-//     vueProp: 'vue variable' // visible to template
-//   }
-// });
+
 export default {
   data: () => ({
     blah:"hi",
     vueProp: 'vue variable',
     valid: true,
     review: null,
+    username: null,
     fortnite: "Fortnite",
     reviewRules: [(v) => !!v || "Review cannot be empty"],
-    //  async submitFortnitetest() {
-    //   let response = await Vue.axios.get("/api/review");
-    //   this.blah=response.data.Test;
-    //
-    //   // await store.dispatch("setFortnite", response.data);
-    //   // return store.state.fortniteReviews;
-    //   // this.blah = blah;
-    //   // this.review = response.data.Reviews;
-    // },
+
     async submitFortnite() {
+
+      //submit to backend to fetch reviews
       let response = await Vue.axios.get("/api/review/fortnite");
       await store.dispatch("setFortnite", response.data);
       this.review = response.data.reviews;
     },
-    // get someblah(){
-    //   return this.blah;
-    // }
+
   }),
   beforeMount(){
     this.submitFortnite();
   },
 
   methods: {
-
     async logout() {
       //submit to backend to logout
       let response = await Vue.axios.get("/api/logout");
@@ -106,13 +83,6 @@ export default {
         this.$router.push({ path: "/login" });
       }
     },
-      // async submitFortnite() {
-      //   let response = await Vue.axios.get("/api/review");
-      //   await store.dispatch("setFortnite", response.data);
-      //   let blah = response.data.Test;
-      //   this.blah = blah;
-      //   this.review = response.data.Reviews;
-      // },
       redirection(){
         this.$router.push({ path: "/" });
       },
@@ -121,10 +91,6 @@ export default {
       },
     }
   ,
-  // name: "AmazingComponent",
-  // components: {
-  //   "vue-aspect-ratio": VueAspectRatio
-  // }
 };
 </script>
 <style scoped src="../assets/css/review.css">
