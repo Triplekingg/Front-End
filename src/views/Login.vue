@@ -37,7 +37,7 @@
           class="mr-4"
           @click="redirection"
         >
-          Back
+          Go To Welcome Page
         </v-btn>
 
       </v-form>

@@ -1,6 +1,8 @@
 <template>
   <v-container>
     <h3>Please note that the username is not case sensitive</h3>
+
+    {{error}}
     <template>
       <v-form
         ref="form"
@@ -66,6 +68,7 @@
 import Vue from "vue";
 export default {
   data: () => ({
+    error:"",
     valid: true,
     username: "",
     displayName:"",

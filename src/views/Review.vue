@@ -1,14 +1,26 @@
 <template class="review">
   <v-container >
     <div >
-      <h1>Here are the top 5 games of the month</h1>
-      <p align="right"><v-btn
-        color="success"
-        class="mr-4"
-        @click="logout"
-      >
-        Logout
-      </v-btn></p>
+      <div align="left">
+        <h3>Welcome {{displayname}}</h3>
+        <p></p>
+        <p align="left"><v-btn
+          color="success"
+          class="mr-4"
+          @click="logout"
+        >
+          Logout
+        </v-btn></p>
+      </div>
+      <div align="center">
+        <h1>Here are the top 5 games of the month</h1>
+        <p> </p>
+      </div>
+
+      <div align="right">
+
+      </div>
+
 
       <div class="my-container" >
         <div class="box1">
@@ -220,11 +232,13 @@
 
 <script>
 import Vue from "vue";
+import store from "@/store";
 // import VueAspectRatio from "vue-aspect-ratio";
 
 export default {
   data: () => ({
     valid: true,
+    displayname:"",
     review: "",
     fortnite: "Fortnite",
     siege: "Siege",
@@ -232,7 +246,17 @@ export default {
     horizon:"Horizon",
     nba:"Nba",
     reviewRules: [(v) => !!v || "Review cannot be empty"],
+    async getDisplayName() {
+
+      //submit to backend to fetch reviews
+      let response = await Vue.axios.get("/api/whoami");
+      await store.dispatch("setLoggedInUser", response.data);
+      this.displayname = response.data.name;
+    }
   }),
+  beforeMount(){
+    this.getDisplayName();
+  },
 
   methods: {
     async logout() {
