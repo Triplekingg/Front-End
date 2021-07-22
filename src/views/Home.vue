@@ -1,25 +1,40 @@
 <template>
   <v-container>
-    <h3>Welcome to Good Stuff game reviews. Please Log in or Sign Up to Continue</h3>
-    <ul>
-      <v-btn
-        color="success"
-        class="mr-4"
-        @click="redirectionLogin"
-      >
-        Log in
-      </v-btn>
+    <div class="Top">
+      <p>
+      </p>
+      <h1 align="center">Welcome to Good Stuff Game Reviews</h1>
+      <h3 align="center"> Please Log in or Sign up to Continue</h3>
+      <p>
 
-      <v-btn
-        color="success"
-        class="mr-4"
-        @click="redirection"
-      >
-        Sign Up
-      </v-btn>
-    </ul>
+      </p>
+      <p>
+
+      </p>
+      <div class="buttons" align="center">
+        <v-btn
+          color="success"
+          class="mr-4"
+          @click="redirectionLogin"
+        >
+          Log in
+        </v-btn>
+
+        <v-btn
+          color="success"
+          class="mr-4"
+          @click="redirection"
+        >
+          Sign Up
+        </v-btn>
+      </div>
+
+    </div>
+
+
+
     <div class="image"><v-img
-      src="https://media.discordapp.net/attachments/850372701394829396/867862975833309204/ps.png?width=1080&height=487"
+      src="https://cdn.discordapp.com/attachments/850372701394829396/867868033909129276/100571.png"
     /></div>
   </v-container>
 </template>
@@ -47,3 +62,5 @@ export default {
   components: {},
 };
 </script>
+<style scoped src="../assets/css/review.css">
+@import '../assets/css/review.css';

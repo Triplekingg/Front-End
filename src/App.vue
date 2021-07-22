@@ -2,14 +2,15 @@
   <v-app>
     <v-app-bar app color="pink" dark>
       <div class="d-flex align-center">
-<!--        <v-img-->
-<!--          alt="Vuetify Logo"-->
-<!--          class="shrink mr-2"-->
-<!--          contain-->
-<!--          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"-->
-<!--          transition="scale-transition"-->
-<!--          width="40"-->
-<!--        />-->
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://media.discordapp.net/attachments/850372701394829396/867866681166004264/Custom_Controller.png?width=803&height=535"
+          transition="scale-transition"
+          width="80"
+          height="80"
+        />
         <h1> GOOD STUFF </h1>
 
 <!--        <v-img-->

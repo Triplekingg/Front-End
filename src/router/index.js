@@ -117,9 +117,9 @@ router.beforeEach(async (to, from, next) => {
     // response.data is our payload
     await store.dispatch("setLoggedInUser", response.data);
     let isLoggedIn = response.data.loggedIn;
-    // if (to.path === "/signup" && !isLoggedIn) {
-    //     next({ path:"/" });
-    // }
+    if ((to.path === "/reviewfortnite"||to.path === "/reviewsiege"||to.path === "/reviewfifa"||to.path === "/reviewnba"||to.path === "/reviewhorizon") && !isLoggedIn) {
+        next({ path:"/login" });
+    }
     // make sure if user is logged, user will not be able to see login page
     if (to.name === "Login" && isLoggedIn) {
         next({ name: "Home" });
