@@ -9,12 +9,14 @@
     align-content: space-evenly;
 
 }
-.review{
+
+.review {
     background-color: #cccccc;
 }
-.image{
+
+.image {
     float: inherit;
-    width:  1920px;
+    width: 1920px;
     height: 1080px;
     background-size: cover;
     aspect-ratio: auto;
@@ -22,29 +24,35 @@
     margin-bottom: 10px;
     align-content: space-evenly;
 }
+
 .ul.no-bullets {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-.Top{
+
+.Top {
     font-family: myFirstFont;
 }
-.Name{
+
+.Name {
     font-weight: bold;
 }
-.ReleaseDate{
+
+.ReleaseDate {
     font-weight: bold;
- }
-.Description{
+}
+
+.Description {
     font-weight: bold;
     text-align: justify-all;
 }
+
 /*.DescriptionDetails{*/
 /*    justify-self: flex-start;*/
 /*}*/
 
-.child{
+.child {
     /*align-content: flex-start;*/
     /*alignment: right;*/
     /*align-self: center;*/
@@ -56,13 +64,16 @@
     /*float: left;*/
     list-style-type: none;
 }
-.parent{
+
+.parent {
     padding: 10rem;
 }
+
 .grid-parent {
     display: grid;
     grid-template-columns: 1fr 1fr
 }
+
 .hhh {
     text-align: left;
     align-self: flex-start;

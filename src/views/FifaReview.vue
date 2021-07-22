@@ -1,41 +1,47 @@
 <template class="fifareview" xmlns:th="http://www.w3.org/1999/xhtml">
-  <v-container >
-    <div >
-      <p align="right"><v-btn
-        color="success"
-        class="mr-4"
-        @click="redirection"
-      >
-        Back
-      </v-btn></p>
+  <v-container>
+    <div>
+      <p align="right">
+        <v-btn
+          color="success"
+          class="mr-4"
+          @click="redirection"
+        >
+          Back
+        </v-btn>
+      </p>
 
-      <p align="right"><v-btn
-        color="success"
-        class="mr-4"
-        @click="logout"
-      >
-        Logout
-      </v-btn></p>
+      <p align="right">
+        <v-btn
+          color="success"
+          class="mr-4"
+          @click="logout"
+        >
+          Logout
+        </v-btn>
+      </p>
 
-      <div class="my-container" >
+      <div class="my-container">
         <h1>Here are the reviews for Fifa 21</h1>
         <div class="box1">
-            <div class="image"><v-img
+          <div class="image">
+            <v-img
               src="https://images-ext-1.discordapp.net/external/IODBjUKZ6o-m3KOKz1VS8KBYwLahxGdQ_DDi0sgqb6Q/https/media.contentapi.ea.com/content/dam/ea/fifa/fifa-21/global_assets/common/featured_images/fifa-21-grid-tile-generic-16x9.jpg.adapt.crop191x100.628p.jpg"
-            /></div>
+            />
+          </div>
           <div class="parent" align="left">
             <div class="child" align="left">
               <ul class="no-bullets" v-if="review.length">
                 <li v-for="(rev) in review" :key="rev.id">
-                  <span class="hhh ">{{rev.username}}: {{rev.reviews}}<br> </span>
+                  <span class="hhh ">{{ rev.username }}: {{ rev.reviews }}<br> </span>
                   <br>
                   <span v-if="rev.error">
       <ol>
        <li> v-for="err in file.response.errorMessages> {{ err }} </li>
       </ol>
     </span>
-  </li>
-</ul>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -52,12 +58,12 @@
 
 <script>
 import Vue from "vue";
-import store from "@/store"
+import store from "@/store";
 
 export default {
   data: () => ({
-    blah:"hi",
-    vueProp: 'vue variable',
+    blah: "hi",
+    vueProp: "vue variable",
     valid: true,
     review: null,
     username: null,
@@ -69,10 +75,10 @@ export default {
       let response = await Vue.axios.get("/api/review/fifa");
       await store.dispatch("setFifa", response.data);
       this.review = response.data.reviews;
-    },
+    }
 
   }),
-  beforeMount(){
+  beforeMount() {
     this.submitFifa();
   },
 
@@ -80,18 +86,18 @@ export default {
     async logout() {
       //submit to backend to logout
       let response = await Vue.axios.get("/api/logout");
-      if (response.data.success){
+      if (response.data.success) {
         this.$router.push({ path: "/login" });
       }
     },
-      redirection(){
-        this.$router.push({ path: "/review" });
-      },
-      reset() {
-        this.$refs.form.reset();
-      },
+    redirection() {
+      this.$router.push({ path: "/review" });
+    },
+    reset() {
+      this.$refs.form.reset();
     }
-  ,
+  }
+
 };
 </script>
 <style scoped src="../assets/css/review.css">

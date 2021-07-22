@@ -2,30 +2,30 @@
   <v-container>
     <template>
       <v-form
-          ref="form"
-          v-model="valid"
-          lazy-validation
+        ref="form"
+        v-model="valid"
+        lazy-validation
       >
         <v-text-field
-            v-model="username"
-            :rules="usernameRules"
-            label="Username"
-            required
+          v-model="username"
+          :rules="usernameRules"
+          label="Username"
+          required
         ></v-text-field>
 
         <v-text-field
-            type ="password"
-            v-model="password"
-            :rules="passwordRules"
-            label="Password"
-            required
+          type="password"
+          v-model="password"
+          :rules="passwordRules"
+          label="Password"
+          required
         ></v-text-field>
 
         <v-btn
-            :disabled="!valid"
-            color="success"
-            class="mr-4"
-            @click="submit"
+          :disabled="!valid"
+          color="success"
+          class="mr-4"
+          @click="submit"
         >
           Login
         </v-btn>
@@ -47,35 +47,36 @@
 
 <script>
 import Vue from "vue";
+
 export default {
   data: () => ({
     valid: true,
     username: "",
     password: "",
     usernameRules: [(v) => !!v || "Username is required"],
-    passwordRules: [(v) => !!v || "Password is required"],
+    passwordRules: [(v) => !!v || "Password is required"]
   }),
 
   methods: {
     async submit() {
-      if (this.$refs.form.validate()){
+      if (this.$refs.form.validate()) {
         //submit to backend to authenticate
         let formData = new FormData();
         formData.append("username", this.username);
         formData.append("password", this.password);
 
         let response = await Vue.axios.post("/api/login", formData);
-        if (response.data.success){
+        if (response.data.success) {
           this.$router.push({ path: "/review" });
-            }
+        }
       }
     },
-    redirection(){
+    redirection() {
       this.$router.push({ path: "/" });
     },
     reset() {
       this.$refs.form.reset();
-    },
-  },
+    }
+  }
 };
 </script>

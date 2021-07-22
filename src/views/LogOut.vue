@@ -12,16 +12,17 @@
 
 <script>
 import Vue from "vue";
+
 export default {
 
   methods: {
     async submit() {
-        //submit to backend to authenticate
-        let response = await Vue.axios.get("/api/logout");
-        if (response.data.success){
-          this.$router.push({ path: "/login" });
-        }
-    },
-  },
+      //submit to backend to authenticate
+      let response = await Vue.axios.get("/api/logout");
+      if (response.data.success) {
+        this.$router.push({ path: "/login" });
+      }
+    }
+  }
 };
 </script>

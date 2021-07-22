@@ -2,7 +2,7 @@
   <v-container>
     <h3>Please note that the username is not case sensitive</h3>
 
-    {{error}}
+    {{ error }}
     <template>
       <v-form
         ref="form"
@@ -24,7 +24,7 @@
         ></v-text-field>
 
         <v-text-field
-          type ="password"
+          type="password"
           v-model="password"
           :rules="passwordRules"
           label="Password"
@@ -32,7 +32,7 @@
         ></v-text-field>
 
         <v-text-field
-          type ="password"
+          type="password"
           v-model="confirmPassword"
           :rules="passwordRules"
           label="Confirm Password"
@@ -66,22 +66,23 @@
 
 <script>
 import Vue from "vue";
+
 export default {
   data: () => ({
-    error:"",
+    error: "",
     valid: true,
     username: "",
-    displayName:"",
+    displayName: "",
     password: "",
-    confirmPassword:"",
+    confirmPassword: "",
     usernameRules: [(v) => !!v || "Username is required"],
     displayNameRules: [(v) => !!v || "Display Name is required"],
-    passwordRules: [(v) => !!v || "Password is required"],
+    passwordRules: [(v) => !!v || "Password is required"]
   }),
 
   methods: {
     async submit() {
-      if (this.$refs.form.validate()){
+      if (this.$refs.form.validate()) {
         //submit to backend to create user
         let formData = new FormData();
         formData.append("username", this.username);
@@ -89,20 +90,19 @@ export default {
         formData.append("displayName", this.displayName);
 
         let response = await Vue.axios.post("/api/signup", formData);
-        if (response.data.success){
+        if (response.data.success) {
           this.$router.push({ path: "/login" });
-        }
-        else{
+        } else {
           this.$router.push({ path: "/about" });
         }
       }
-    },redirection(){
+    }, redirection() {
       this.$router.push({ path: "/" });
     },
     reset() {
       this.$refs.form.reset();
-    },
+    }
   },
-  name: "SignUp",
+  name: "SignUp"
 };
 </script>

@@ -32,10 +32,11 @@
     </div>
 
 
-
-    <div class="image"><v-img
-      src="https://cdn.discordapp.com/attachments/850372701394829396/867868033909129276/100571.png"
-    /></div>
+    <div class="image">
+      <v-img
+        src="https://cdn.discordapp.com/attachments/850372701394829396/867868033909129276/100571.png"
+      />
+    </div>
   </v-container>
 </template>
 
@@ -44,22 +45,22 @@ import Vue from "vue";
 
 export default {
   methods: {
-    async redirection(){
+    async redirection() {
       this.$router.push({ path: "/signup" });
-    },async redirectionLogin(){
+    }, async redirectionLogin() {
       this.$router.push({ path: "/login" });
     },
     async logout() {
       //submit to backend to logout
       let response = await Vue.axios.get("/api/logout");
-      if (response.data.success){
+      if (response.data.success) {
         this.$router.push({ path: "/login" });
       }
-    },
+    }
   },
   name: "Home",
 
-  components: {},
+  components: {}
 };
 </script>
 <style scoped src="../assets/css/review.css">

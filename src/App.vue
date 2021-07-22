@@ -13,22 +13,11 @@
         />
         <h1> GOOD STUFF </h1>
 
-<!--        <v-img-->
-<!--          alt="Vuetify Name"-->
-<!--          class="shrink mt-1 hidden-sm-and-down"-->
-<!--          contain-->
-<!--          min-width="100"-->
-<!--          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"-->
-<!--          width="100"-->
-<!--        />-->
+
       </div>
 
       <v-spacer></v-spacer>
 
-      <v-btn href="" target="_blank" text>
-        <span class="mr-2">{{ $store.state.name }}</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -38,17 +27,17 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import Vuetify from 'vuetify/lib'
+import Vue from "vue";
+import Vuetify from "vuetify/lib";
 
-Vue.use(Vuetify)
+Vue.use(Vuetify);
 
 export default new Vuetify({
   theme: { dark: true },
-  name:"App",
+  name: "App",
   data: () => ({
     //
-  }),
+  })
 });
 // export default new Vuetify({
 // theme: { dark: true },
