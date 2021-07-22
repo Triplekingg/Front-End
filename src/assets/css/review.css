@@ -35,6 +35,16 @@
     display: grid;
     grid-template-columns: 1fr 1fr
 }
+.hhh {
+    text-align: left;
+    align-self: flex-start;
+    align-items: flex-start;
+    border: 2px solid #ccc;
+    background-color: #f01c64;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px;
+}
 
 /*.box2 {*/
 /*    display: block;*/

@@ -17,7 +17,20 @@
             /></div>
           <div class="parent grid-parent">
             <div class="child" >
-              {{review}}
+              <l v-if="review.length">
+                <li v-for="(rev) in review" :key="rev.id"><br>
+                  <span class="hhh">{{rev}}<br> </span>
+                  <br>
+                  <span v-if="rev.error">
+      <ol>
+       <li> v-for="err in file.response.errorMessages> {{ err }} </li>
+      </ol>
+    </span>
+  </li>
+</l>
+
+
+
 <!--              <tbody>-->
 <!--              <tr th:if="${fortniteReviews.empty}">-->
 <!--                <td colspan="2"> No Reviews Available </td>-->
@@ -28,13 +41,7 @@
 <!--              </tbody>-->
             </div>
             <div class="child">
-              <v-btn
-                color="success"
-                class="mr-4"
-                @click="submitFortnite"
-              >
-                Test
-              </v-btn>
+
 
             </div>
           </div>
