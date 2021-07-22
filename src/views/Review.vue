@@ -145,21 +145,21 @@
                 v-model="valid"
                 lazy-validation
               >
-                <v-text-field
+                <v-textarea
                   v-model="review"
                   :rules="reviewRules"
                   label="Review"
-                ></v-text-field>
+                ></v-textarea>
                 <v-btn
                   color="success"
                   class="mr-4"
-                  @click="submitFortnite"
+                  @click="submitNba"
 
                 >
                   Submit Review
                 </v-btn>
 
-                <v-btn color="error" class="mr-4" @click="redirection">Read Reviews</v-btn>
+                <v-btn color="error" class="mr-4" @click="redirectionNba">Read Reviews</v-btn>
 
               </v-form>
             </div>
@@ -230,7 +230,7 @@ export default {
     siege: "Siege",
     fifa:"Fifa",
     horizon:"Horizon",
-    nba:"NBA",
+    nba:"Nba",
     reviewRules: [(v) => !!v || "Review cannot be empty"],
   }),
 
@@ -281,6 +281,19 @@ export default {
         }
       }
     },
+    async submitNba() {
+      if (this.$refs.form.validate()){
+        //submit to backend to authenticate
+        let formData = new FormData();
+        formData.append("review", this.review);
+        formData.append("gameName", this.nba);
+
+        let response = await Vue.axios.post("/api/review", formData);
+        if (response.data.success || !response.data.success) {
+          location.reload()
+        }
+      }
+    },
       redirectionFortnite(){
         this.$router.push({ path: "/fortnitereview" });
       },
@@ -289,6 +302,9 @@ export default {
     },
     redirectionFifa(){
       this.$router.push({ path: "/fifareview" });
+    },
+    redirectionNba(){
+      this.$router.push({ path: "/nbareview" });
     },
       reset() {
         this.$refs.form.reset();
