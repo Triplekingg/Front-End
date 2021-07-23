@@ -1,0 +1,95 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(https://fonts.googleapis.com/css2?family=Tourney:wght@100&display=swap%27);
+}
+
+.box1 {
+    display: block;
+    padding: 10px;
+    align-content: space-evenly;
+
+}
+
+.review {
+    background-color: #cccccc;
+}
+
+.image {
+    float: inherit;
+    width: 1920px;
+    height: 1080px;
+    background-size: cover;
+    aspect-ratio: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    align-content: space-evenly;
+}
+
+.ul.no-bullets {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Top {
+    font-family: myFirstFont;
+}
+
+.Name {
+    font-weight: bold;
+}
+
+.ReleaseDate {
+    font-weight: bold;
+}
+
+.Description {
+    font-weight: bold;
+    text-align: justify-all;
+}
+
+/*.DescriptionDetails{*/
+/*    justify-self: flex-start;*/
+/*}*/
+
+.child {
+    /*align-content: flex-start;*/
+    /*alignment: right;*/
+    /*align-self: center;*/
+    /*align-items: center;*/
+    text-align: left;
+    float: left;
+    font-size: x-large;
+    padding: 1rem;
+    /*float: left;*/
+    list-style-type: none;
+}
+
+.parent {
+    padding: 10rem;
+}
+
+.grid-parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr
+}
+
+.hhh {
+    text-align: left;
+    align-self: flex-start;
+    align-items: flex-start;
+    border: 2px solid #ccc;
+    background-color: #f01c64;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px;
+    list-style-type: none;
+
+}
+
+/*.box2 {*/
+/*    display: block;*/
+/*    padding: 100px;*/
+/*    text-align: justify;*/
+/*    margin-top: 100px; !* OR ADD THIS LINE AND SET YOUR PROPER SPACE as the space above box2 *!*/
+/*}*/
