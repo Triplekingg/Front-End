@@ -1,0 +1,18 @@
+working front end
+Done with set up for real
+Able to logout from home and use backend to logout
+Configure Sign Up Page and make it work
+Add back buttons in sign up and log in page
+Add games to review page
+Reviews work now and it is connected with database on front-end
+Started revamping Review.vue
+Made progress in formating the list of reviews on EachReview.vue
+Add proper spacing in Review Page
+Added review page for Siege and connect with backend successdul
+Added Review Page for Nba
+Used display name in welcome message after logging in
+Styling and formatting each page
+
+
+
+
