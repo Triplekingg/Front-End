@@ -1,9 +1,9 @@
 <template class="horizonreview" xmlns:th="http://www.w3.org/1999/xhtml">
   <v-container>
     <div>
-      <p align="right">
+      <p align="left">
         <v-btn
-          color="success"
+          color="blue"
           class="mr-4"
           @click="redirection"
         >
@@ -11,9 +11,9 @@
         </v-btn>
       </p>
 
-      <p align="right">
+      <p align="left">
         <v-btn
-          color="success"
+          color="red"
           class="mr-4"
           @click="logout"
         >
@@ -21,8 +21,9 @@
         </v-btn>
       </p>
 
+
       <div class="my-container">
-        <h1>Here are the reviews for Horizon Zero Dawn</h1>
+        <h1 align="center">HERE ARE THE REVIEWS FOR HORIZON ZERO DAWN</h1>
         <div class="box1">
           <div class="image">
             <v-img

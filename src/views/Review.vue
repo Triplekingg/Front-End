@@ -6,7 +6,7 @@
         <p></p>
         <p align="left">
           <v-btn
-            color="success"
+            color="red"
             class="mr-4"
             @click="logout"
           >
@@ -79,6 +79,14 @@
 
                 <v-btn color="error" class="mr-4" @click="redirectionFortnite">Read Reviews</v-btn>
 
+                <v-btn
+                  color="blue"
+                  class="mr-4"
+                  href="https://www.epicgames.com/fortnite/en-US/download"
+                >
+                  Buy Now!
+                </v-btn>
+
               </v-form>
             </div>
           </div>
@@ -137,6 +145,14 @@
                 </v-btn>
 
                 <v-btn color="error" class="mr-4" @click="redirectionSiege">Read Reviews</v-btn>
+
+                <v-btn
+                  color="blue"
+                  class="mr-4"
+                  href="https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/"
+                >
+                  Buy Now!
+                </v-btn>
 
               </v-form>
             </div>
@@ -198,6 +214,14 @@
 
                 <v-btn color="error" class="mr-4" @click="redirectionFifa">Read Reviews</v-btn>
 
+                <v-btn
+                  color="blue"
+                  class="mr-4"
+                  href="https://store.steampowered.com/app/1313860/EA_SPORTS_FIFA_21/"
+                >
+                  Buy Now!
+                </v-btn>
+
               </v-form>
             </div>
           </div>
@@ -258,7 +282,13 @@
                 </v-btn>
 
                 <v-btn color="error" class="mr-4" @click="redirectionNba">Read Reviews</v-btn>
-
+                <v-btn
+                  color="blue"
+                  class="mr-4"
+                  href="https://store.steampowered.com/app/1225330/NBA_2K21/"
+                >
+                  Buy Now!
+                </v-btn>
               </v-form>
             </div>
           </div>
@@ -318,6 +348,14 @@
                 </v-btn>
 
                 <v-btn color="error" class="mr-4" @click="redirectionHorizon">Read Reviews</v-btn>
+
+                <v-btn
+                  color="blue"
+                  class="mr-4"
+                  href="https://store.steampowered.com/agecheck/app/1151640/"
+                >
+                  Buy Now!
+                </v-btn>
 
               </v-form>
             </div>
